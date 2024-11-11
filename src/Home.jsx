@@ -11,7 +11,7 @@ const Home = () => {
       const result = await response.data;
       setCountries(result);
     } catch (error) {
-      console.log("error",error);
+      console.error("Error fetching data:",error)
     }
   };
 
