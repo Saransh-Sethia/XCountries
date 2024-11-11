@@ -6,9 +6,13 @@ const Home = () => {
   const [countries, setCountries] = useState([]);
 
   const fetchData = async () => {
-    const response = await axios.get(API_URL);
-    const result = await response.data;
-    setCountries(result);
+    try {
+      const response = await axios.get(API_URL);
+      const result = await response.data;
+      setCountries(result);
+    } catch (error) {
+      console.log("message", error.message);
+    }
   };
 
   useEffect(() => {
